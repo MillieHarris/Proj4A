@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movepostman : MonoBehaviour
+public class killpostman : MonoBehaviour
 {
-    public GameObject postman;
     public GameObject postmanparent;
-    public Rigidbody2D postbody;
+    public GameObject postman;
     public float min;
     public float max;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,19 @@ public class movepostman : MonoBehaviour
         postman.transform.position = new Vector3(Mathf.PingPong(Time.time * 5, max - min) + min, postman.transform.position.y, postman.transform.position.z);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "dog")
+        {
+            GameObject lifescript = GameObject.Find("Canvas");
+            textscript script = lifescript.GetComponent<textscript>();
 
 
+            Destroy(postmanparent);
+            Destroy(this.gameObject);
+            script.score += 100;
+
+
+        }
+    }
 }

@@ -26,6 +26,7 @@ public class enemycollision : MonoBehaviour
         if (countdown < 0)
         { isActive = false;
             countdown = 2;
+
         }
     }
 
@@ -40,7 +41,7 @@ public class enemycollision : MonoBehaviour
             isActive = true;
 
 
-         //   player.transform.position = new Vector3(player.transform.position.x - 3, player.transform.position.y, player.transform.position.z);
+            //   player.transform.position = new Vector3(player.transform.position.x - 3, player.transform.position.y, player.transform.position.z);
         }
 
 

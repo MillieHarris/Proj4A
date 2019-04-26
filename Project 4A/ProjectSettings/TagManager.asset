@@ -11,6 +11,9 @@ TagManager:
   - doghouse
   - power
   - dog
+  - bone
+  - coin
+  - enemykillcollide
   layers:
   - Default
   - TransparentFX
@@ -20,9 +23,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - player
+  - enemy
+  - bone
   - 
   - 
   - 

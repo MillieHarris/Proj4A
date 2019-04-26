@@ -14,6 +14,8 @@ public class jump : MonoBehaviour
     public AudioSource jumpsound;
     public AudioClip jumpclip;
     public int haspower;
+    public GameObject boneprefab;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +48,14 @@ public class jump : MonoBehaviour
         if(onGround)
         { player.transform.Rotate(0,0,0)  ;}
 
-        if (Input.GetKeyDown("s"))
-        { }
+
+
+        if (Input.GetKeyDown("space") && haspower == 1)
+        { GameObject boneinstance = Instantiate(boneprefab, player.transform.position, Quaternion.identity );
+            Rigidbody2D bonebody = boneinstance.GetComponent<Rigidbody2D>();
+            bonebody.AddForce(Vector3.right * 4);
+            jumper.SetInteger("animstate", 2);
+        }
         
     }
 
@@ -65,6 +73,11 @@ public class jump : MonoBehaviour
 
         if (collision.gameObject.tag == "power")
         { haspower = 1; }
+
+        if (collision.gameObject.tag == "enemy")
+        { haspower = 0;
+            jumper.SetInteger("animstate", 3);
+        }
 
     }
 
