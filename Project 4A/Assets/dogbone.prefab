@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8556290687584358753}
   - component: {fileID: 4817657173119742837}
   - component: {fileID: 232666253267941478}
+  - component: {fileID: 5861968307224446493}
   m_Layer: 10
   m_Name: dogbone
   m_TagString: bone
@@ -225,3 +226,15 @@ PolygonCollider2D:
       - {x: -2.25, y: -1.4499999}
       - {x: -2.05, y: -1.35}
       - {x: -1.93, y: -1.26}
+--- !u!114 &5861968307224446493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668214933766819014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19503eb7f7e809f4897b55345351dac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

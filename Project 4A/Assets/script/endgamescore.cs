@@ -16,6 +16,6 @@ public class endgamescore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        finalscore.text = "Final Score: " + PlayerPrefs.GetInt("score");
+        finalscore.text = "Final Score: " + PlayerPrefs.GetFloat("score");
     }
 }

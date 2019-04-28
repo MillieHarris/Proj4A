@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class powerup : MonoBehaviour
+public class bonecollider : MonoBehaviour
 {
-
-    public GameObject boneprefab;
-    public GameObject player;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,22 +13,22 @@ public class powerup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
         
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-
-        if (collision.gameObject.tag == "power")
+        if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemykillcollide")
         { Destroy(collision.gameObject);
-            ParticleSystem playersystem = player.GetComponent<ParticleSystem>();
-            playersystem.Play();
+            Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.tag == "platform")
+        { Destroy(this.gameObject); }
+
+        if (collision.gameObject.tag == "bottom")
+        { Destroy(this.gameObject); }
+
     }
 
 }
